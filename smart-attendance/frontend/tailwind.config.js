@@ -46,6 +46,16 @@ export default {
         'shimmer': 'shimmer 2s infinite',
         'float': 'float 3s ease-in-out infinite',
         'shake': 'shake 0.5s ease-in-out',
+        'flip-in': 'flipIn 0.6s ease-out',
+        'zoom-in': 'zoomIn 0.4s ease-out',
+        'zoom-out': 'zoomOut 0.4s ease-in',
+        'slide-out-up': 'slideOutUp 0.5s ease-in',
+        'slide-out-down': 'slideOutDown 0.5s ease-in',
+        'pulse-ring': 'pulseRing 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'gradient-shift': 'gradientShift 3s ease infinite',
+        'bounce-slow': 'bounce 2s infinite',
+        'wiggle': 'wiggle 0.6s ease-in-out',
+        'heartbeat': 'heartbeat 1.3s ease-in-out infinite',
       },
       keyframes: {
         fadeIn: {
@@ -102,6 +112,47 @@ export default {
           '0%, 100%': { transform: 'translateX(0)' },
           '25%': { transform: 'translateX(-5px)' },
           '75%': { transform: 'translateX(5px)' },
+        },
+        flipIn: {
+          '0%': { transform: 'perspective(400px) rotateY(90deg)', opacity: '0' },
+          '100%': { transform: 'perspective(400px) rotateY(0)', opacity: '1' },
+        },
+        zoomIn: {
+          '0%': { transform: 'scale(0.3)', opacity: '0' },
+          '100%': { transform: 'scale(1)', opacity: '1' },
+        },
+        zoomOut: {
+          '0%': { transform: 'scale(1)', opacity: '1' },
+          '100%': { transform: 'scale(0.3)', opacity: '0' },
+        },
+        slideOutUp: {
+          '0%': { transform: 'translateY(0)', opacity: '1' },
+          '100%': { transform: 'translateY(-20px)', opacity: '0' },
+        },
+        slideOutDown: {
+          '0%': { transform: 'translateY(0)', opacity: '1' },
+          '100%': { transform: 'translateY(20px)', opacity: '0' },
+        },
+        pulseRing: {
+          '0%': { boxShadow: '0 0 0 0 rgba(59, 130, 246, 0.7)' },
+          '50%': { boxShadow: '0 0 0 10px rgba(59, 130, 246, 0)' },
+          '100%': { boxShadow: '0 0 0 0 rgba(59, 130, 246, 0)' },
+        },
+        gradientShift: {
+          '0%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+          '100%': { backgroundPosition: '0% 50%' },
+        },
+        wiggle: {
+          '0%, 100%': { transform: 'rotate(-1deg)' },
+          '50%': { transform: 'rotate(1deg)' },
+        },
+        heartbeat: {
+          '0%': { transform: 'scale(1)' },
+          '25%': { transform: 'scale(1.3)' },
+          '50%': { transform: 'scale(1)' },
+          '75%': { transform: 'scale(1.3)' },
+          '100%': { transform: 'scale(1)' },
         },
       },
       transitionTimingFunction: {
